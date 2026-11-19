@@ -1,0 +1,327 @@
+/* Leonida Trophy Atlas — the look is this guide's own: a dusk sky over Leonida,
+   deep violet panels, sunset orange for action, and a grade colour per trophy. */
+
+:root {
+  --ink: #f4eef5;
+  --ink-dim: #c9b8cc;
+  --panel: #241a2e;
+  --panel-soft: #2e2138;
+  --line: #463652;
+  --sunset: #ff8a3d;
+  --sunset-deep: #e5497d;
+  --violet: #7a5cff;
+  --good: #58d68d;
+  --warn: #ffb02e;
+  --platinum: #bfe9ff;
+  --gold: #ffd75e;
+  --silver: #d7dce2;
+  --bronze: #e0a075;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #17101f;
+  color: var(--ink);
+  font-family: "DejaVu Sans", Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+
+.masthead {
+  background: linear-gradient(115deg, #3b1155 0%, #8a2a6d 48%, #e5497d 78%, #ff8a3d 100%);
+  padding: 2.25rem 1rem 1.75rem;
+}
+
+.masthead-inner { max-width: 1080px; margin: 0 auto; }
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: #ffd9ec;
+}
+
+h1 { margin: 0 0 0.5rem; font-size: 2.3rem; line-height: 1.1; }
+
+.lede { max-width: 62ch; margin: 0 0 1.25rem; color: #ffe9f3; }
+
+.progress-wrap { max-width: 62ch; }
+
+.progress-line {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.progress-bar {
+  height: 12px;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--sunset), var(--gold));
+  transition: width 0.25s ease;
+}
+
+.progress-sub { margin: 0.4rem 0 0; font-size: 0.88rem; color: #ffe9f3; }
+
+main { max-width: 1080px; margin: 0 auto; padding: 1.25rem 1rem 2rem; }
+
+h2 { font-size: 1.35rem; margin: 0 0 0.5rem; }
+
+.section-lede { color: var(--ink-dim); margin: 0 0 1rem; max-width: 70ch; }
+
+.toolbar {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-box { display: block; font-weight: 700; margin-bottom: 0.75rem; }
+
+.search-box input {
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #17101f;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.75rem; }
+
+.chip {
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--sunset);
+  border-color: var(--sunset);
+  color: #241005;
+  font-weight: 700;
+}
+
+.toolbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: center;
+  margin-top: 0.6rem;
+}
+
+.toolbar-row select {
+  margin-left: 0.35rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #17101f;
+  color: var(--ink);
+}
+
+.check { display: inline-flex; gap: 0.4rem; align-items: center; }
+
+button {
+  border: 1px solid var(--line);
+  background: var(--panel-soft);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--sunset); }
+
+.toolbar-note { color: var(--ink-dim); font-size: 0.9rem; }
+
+.roadmap { margin-bottom: 1.75rem; }
+
+.stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.9rem;
+}
+
+.stage {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+}
+
+.stage h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
+
+.stage h3 .stage-num {
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  line-height: 1.6em;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--violet);
+  color: #fff;
+  margin-right: 0.45rem;
+  font-size: 0.85rem;
+}
+
+.stage p { margin: 0 0 0.6rem; color: var(--ink-dim); font-size: 0.93rem; }
+
+.stage .stage-trophies { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.stage .missable-note {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--warn);
+}
+
+.mini-chip {
+  border: 1px solid var(--line);
+  background: #17101f;
+  color: var(--ink-dim);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.mini-chip.earned { color: var(--good); border-color: var(--good); }
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.trophy-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+
+.trophy {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.9rem;
+  cursor: pointer;
+}
+
+.trophy.selected { border-color: var(--sunset); box-shadow: 0 0 0 1px var(--sunset); }
+
+.trophy.earned { border-color: var(--good); }
+
+.trophy-top { display: flex; gap: 0.6rem; align-items: baseline; }
+
+.trophy-check {
+  flex: 0 0 auto;
+  width: 1.35rem;
+  height: 1.35rem;
+  accent-color: var(--good);
+  cursor: pointer;
+}
+
+.trophy-name { font-weight: 700; flex: 1; }
+
+.grade {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid;
+}
+
+.grade-platinum { color: var(--platinum); border-color: var(--platinum); }
+.grade-gold { color: var(--gold); border-color: var(--gold); }
+.grade-silver { color: var(--silver); border-color: var(--silver); }
+.grade-bronze { color: var(--bronze); border-color: var(--bronze); }
+
+.trophy-desc { margin: 0.35rem 0 0.45rem; color: var(--ink-dim); font-size: 0.94rem; }
+
+.trophy-meta { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.tag {
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  color: var(--ink-dim);
+}
+
+.tag.missable { color: var(--warn); border-color: var(--warn); }
+.tag.hidden-flag { color: #c9a7ff; border-color: #c9a7ff; }
+
+.trophy-hidden-note { color: #c9a7ff; font-style: italic; }
+
+.detail {
+  position: sticky;
+  top: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+}
+
+.detail h3 { margin: 0 0 0.25rem; font-size: 1.25rem; }
+
+.detail .official { color: var(--ink-dim); margin: 0 0 0.75rem; }
+
+.detail h4 { margin: 1rem 0 0.3rem; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sunset); }
+
+.detail p { margin: 0 0 0.6rem; }
+
+.detail .tip {
+  background: var(--panel-soft);
+  border-left: 3px solid var(--sunset);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.detail ul { margin: 0; padding-left: 1.2rem; }
+.detail li { margin-bottom: 0.25rem; }
+
+.detail .earned-line { margin-top: 1rem; font-weight: 700; }
+
+.sources { margin-top: 2rem; }
+
+.sources a { color: var(--sunset); }
+
+.sources-note { color: var(--ink-dim); font-size: 0.9rem; }
+
+footer {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+  color: var(--ink-dim);
+  font-size: 0.88rem;
+}
+
+.empty { color: var(--ink-dim); padding: 1rem; }
+
+@media (max-width: 820px) {
+  .columns { grid-template-columns: 1fr; }
+  .detail { position: static; }
+  h1 { font-size: 1.9rem; }
+}

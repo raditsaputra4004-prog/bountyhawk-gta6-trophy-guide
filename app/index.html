@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for the 55 PlayStation 5 trophies of Grand Theft Auto VI: a roadmap to the platinum, missable flags, and a cited guide for every trophy.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Atlas</h1>
+    <p class="lede">An offline guide and tracker for every trophy in the state of Leonida. Check off what you have earned, follow the roadmap to the platinum, and read a cited guide for each trophy — no network needed, progress saved in your browser.</p>
+    <div class="progress-wrap" aria-label="Trophy progress">
+      <div class="progress-line"><span id="progress-text">Loading…</span><span id="progress-count"></span></div>
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill" style="width:0%"></div></div>
+      <p class="progress-sub" id="progress-sub"></p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="toolbar" aria-label="Find and filter trophies">
+    <label class="search-box">Search
+      <input id="search" type="search" placeholder="Trophy name, mission, or keyword…" autocomplete="off">
+    </label>
+    <div class="chip-row" id="kind-chips" role="group" aria-label="Filter by kind"></div>
+    <div class="toolbar-row">
+      <label>Grade
+        <select id="grade-filter">
+          <option value="">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="check"><input id="earned-only" type="checkbox"> Earned only</label>
+      <label class="check"><input id="spoiler-toggle" type="checkbox"> Spoiler-safe: hide story trophies until earned</label>
+    </div>
+    <div class="toolbar-row">
+      <button id="export-btn" type="button">Export progress</button>
+      <button id="import-btn" type="button">Import progress</button>
+      <input id="import-file" type="file" accept="application/json,.json" hidden>
+      <button id="reset-btn" type="button">Reset progress</button>
+      <span class="toolbar-note" id="toolbar-note"></span>
+    </div>
+  </section>
+
+  <section class="roadmap" aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the platinum</h2>
+    <p class="section-lede">Six stages, in order. The platinum needs the gold <strong>A Long Road</strong> — 100% completion — so the last stage is the cleanup. Missable trophies are flagged in the stage where they belong.</p>
+    <ol class="stages" id="stages"></ol>
+  </section>
+
+  <div class="columns">
+    <section class="list-col" aria-label="Trophy checklist">
+      <h2 id="list-heading">Checklist</h2>
+      <p class="section-lede" id="list-summary"></p>
+      <ul class="trophy-list" id="trophy-list"></ul>
+    </section>
+    <aside class="detail-col" aria-label="Selected trophy guide">
+      <div id="detail" class="detail"></div>
+    </aside>
+  </div>
+
+  <section class="sources" aria-label="Sources">
+    <h2>Sources &amp; method</h2>
+    <p>Every trophy's name, description and grade is PlayStation's, as published by <strong>Exophase</strong> and <strong>PSNProfiles</strong> — the two agree on all 55. The public list was reported by Push Square on 18 November 2026. Every guide, tip, kind, missable flag and roadmap stage on this page is this guide's own work, written from those descriptions; no other guide's text is used. Where a step names a place or a system, that name comes from the official description itself, which is cited beside the guide.</p>
+    <ul>
+      <li><a href="https://www.gtavicecityhub.com/achievements" rel="noopener">GTA Vice City Hub — GTA 6 achievements</a> (independent list of the same 55)</li>
+      <li><a href="https://sixshore.com/gta-6/guides/trophies-and-achievements/" rel="noopener">Sixshore — GTA 6 trophy and achievement list</a> (independent list of the same 55)</li>
+    </ul>
+    <p class="sources-note">Links open only when you follow them. This app fetches nothing at run time except its own data files.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Atlas — a fan-made guide. Grand Theft Auto and GTA are trademarks of their owners; this guide is not affiliated with or endorsed by them, and uses no official artwork, logos or screenshots. Trophy names and descriptions are PlayStation's, shown as published.</p>
+</footer>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>
